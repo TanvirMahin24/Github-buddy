@@ -1,34 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>GitHub Buddy</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-primary mb-3">
-        <div class="container">
-            <a href="#" class="navbar-brand">GitHub Buddy</a>
+    <nav class="navbar navbar-dark bg-success mb-3">
+        <div class="container text-center">
+            <span class="row col-12 navbar-brand appName lead">GitHub Buddy</span>
+            <div class="search mx-auto">
+                <h5 class="lead text-light">Enter username to view user profile and repositories</h5>
+                <input type="text" id="searchUser" class="form-control text-center" placeholder="GitHub Username....">
+            </div>
         </div>
     </nav>
-    <div class="container searchContainer">
-        <div class="card card-body search">
-            <h2>Search User</h2>
-            <p class="lead">Enter username to view user profile and repositories</p>
-            <input type="text" id="searchUser" class="form-control" placeholder="GitHub Username....">
-        </div>
-        <br>
-        <div id="profile">
-
-        </div>
-    </div>
-    <footer class="mt-5 p-3 bg-light text-center">
-        &copy;2020, GitHub Buddy by Tanvir Mahin
+    <div class="container-fluid outputContainer row"></div>
+    <footer class="mt-5 p-3 lead bg-success text-center text-light">
+        ©2020, GitHub Buddy by Tanvir Mahin
     </footer>
+    
     <script src="./js/ui.js"></script>
     <script src="./js/github.js"></script>
     <script src="./js/app.js"></script>
-</body>
-</html>
+
+</script>
+</body></html>

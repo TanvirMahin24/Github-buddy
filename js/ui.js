@@ -1,37 +1,41 @@
 class UI{
     constructor(){
-        this.profile = document.querySelector('#profile');
+        this.profile = document.querySelector('.outputContainer');
     }
 
     showProfile(user){
         this.profile.innerHTML = `
-            <div class="card card-body mb-3">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="img-fluid mb-2" src="${user.avatar_url}">
-                        <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-block">View Profile</a>
+        <div class="col-md-4 profile-view pl-5 pr-3">
+            <div class="card">
+                <div class="card-header">
+                    <img class="card-img-top" src="${user.avatar_url}">
+                    <div class="text-center">
+                    <span class="badge badge-success mt-3">Followers: ${user.followers}</span>
+                    <span class="badge badge-success mt-3">Following: ${user.following}</span>
+                    <span class="badge badge-success  mt-3">Gists: ${user.public_gists}</span>
+                    <span class="badge badge-success  mt-3">Repos: ${user.public_repos}</span>
                     </div>
-                    <div class="col-md-8 mt-md-1 mt-4">
-                        <div class="text-center mb-4">
-                            <span class="badge badge-primary">Public Repos: ${user.public_repos}</span>
-                            <span class="badge badge-secondary">Gists: ${user.public_gists}</span>
-                            <span class="badge badge-success">Followers: ${user.followers}</span>
-                            <span class="badge badge-info">Following: ${user.following}</span>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item"><b>Name:</b> ${user.name}</li>
-                            <li class="list-group-item"><b>Bio:</b> ${user.bio}</li>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <span class="profileName mb-2">${user.name}</span><br>
+                        <span class="h6 lead">${user.bio}</span>
+                        <ul class="list-group text-left mt-2">
                             <li class="list-group-item"><b>Company:</b> ${user.company}</li>
                             <li class="list-group-item"><b>Website:</b> ${user.blog}</li>
                             <li class="list-group-item"><b>Location:</b> ${user.location}</li>
                             <li class="list-group-item"><b>Email:</b> ${user.email}</li>
                             <li class="list-group-item"><b>Member Since:</b> ${user.created_at}</li>
                         </ul>
+                        <a href="${user.html_url}" target="_blank" class="btn btn-success btn-block mt-3">View Profile</a>
                     </div>
                 </div>
             </div>
-            <h3 class="page-heading mb-3">Latest 10 repositories:</h3>
+        </div>
+        <div class="col-md-8 reposContainer">
+            <span class="text-center mb-3 repoTitle">Latest 10 repositories:</span>
             <div id="repos"></div>
+        </div>
         `;
     }
 
@@ -40,18 +44,21 @@ class UI{
         let output = '';
         repos.forEach(repo => {
             output += `
-                <div class="card card-body mb-2">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
-                        </div>
-                        <div class="col-md-6 mt-md-0 mt-3 text-center">                            
-                            <span class="badge badge-primary">Stars: ${repo.stargazers_count}</span>
-                            <span class="badge badge-secondary">Watchers: ${repo.watchers_count}</span>
-                            <span class="badge badge-success">Forks: ${repo.forks_count}</span>
-                        </div>
+            <div class="card card-body mb-2">
+                <div class="row box-shadow">
+                    <div class="col-md-6">
+                        <span class="lead">${repo.name}</span>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3 text-center">                            
+                        <span class="badge badge-success">Stars: ${repo.stargazers_count}</span>
+                        <span class="badge badge-success">Watchers: ${repo.watchers_count}</span>
+                        <span class="badge badge-success">Forks: ${repo.forks_count}</span>
+                    </div>
+                    <div class="offset-1 col-md-4 mt-3 float-right">
+                        <a href="${repo.html_url}" target="_blank" class="btn btn-outline-success">View Repository</a>
                     </div>
                 </div>
+            </div>
             `
         });
         document.querySelector('#repos').innerHTML = output;

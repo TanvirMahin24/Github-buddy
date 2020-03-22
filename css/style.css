@@ -7,3 +7,12 @@
 .link{
     color: black;
 }
+.outputContainer{
+    min-height: 58%;
+}
+.repoTitle{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
