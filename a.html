@@ -1,0 +1,75 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>GitHub Buddy</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-success mb-3">
+        <div class="container text-center">
+            <span class="row col-12 navbar-brand appName lead">GitHub Buddy</span>
+            <div class="search mx-auto">
+                <h5 class="lead text-light">Enter username to view user profile and repositories</h5>
+                <input type="text" id="searchUser" class="form-control text-center" placeholder="GitHub Username....">
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid outputContainer row">
+        <div class="offset-md-1 col-md-4 profile-view">
+            <div class="card">
+                <div class="card-header">
+                    <img class="card-img-top" src="https://avatars2.githubusercontent.com/u/55342128?v=4">
+                    <div class="text-center mt-3">
+                        <span class="badge badge-success">Repos: 10</span>
+                        <span class="badge badge-success">Gists: 0</span>
+                        <span class="badge badge-success">Followers: 0</span>
+                        <span class="badge badge-success">Following: 1</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <span class="profileName mb-2"> Tanvir Mahin</span><br>
+                        <span class="h6 lead">Don't be so busy making a living that you forget to actually make a life.</span>
+                        <ul class="list-group text-left mt-2">
+                            <li class="list-group-item"><b>Company:</b> null</li>
+                            <li class="list-group-item"><b>Website:</b> tanvirmahin24.github.io</li>
+                            <li class="list-group-item"><b>Location:</b> Rajshahi, Bangladesh</li>
+                            <li class="list-group-item"><b>Email:</b> null</li>
+                            <li class="list-group-item"><b>Member Since:</b> 2019-09-15T06:40:17Z</li>
+                        </ul>
+                        <a href="https://github.com/A" target="_blank" class="btn btn-success btn-block mt-3">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 reposContainer">
+            <h3 class="page-heading mb-3">Latest 10 repositories:</h3>
+            <div class="card card-body mb-2">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="lead">GitHub Buddy</span>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3 text-center">                            
+                        <span class="badge badge-success">Stars: 0</span>
+                        <span class="badge badge-success">Watchers: 0</span>
+                        <span class="badge badge-success">Forks: 0</span>
+                    </div>
+                    <div class="offset-8 col-md-4 mt-3 float-right">
+                        <a href="https://github.com/TanvirMahin24/Github-buddy" target="_blank" class="btn btn-outline-success">View Repository</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <footer class="mt-5 p-3 lead bg-success text-center text-light">
+        ©2020, GitHub Buddy by Tanvir Mahin
+    </footer>
+    
+    <script src="./js/ui.js"></script>
+    <script src="./js/github.js"></script>
+    <script src="./js/app.js"></script>
+
+</script>
+</body></html>
